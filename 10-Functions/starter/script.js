@@ -229,11 +229,11 @@ const h = function () {
     console.log(b * 2);
   };
 };
-g();
-f();
-//Re-assigning f function
-h();
-f();
+// g();
+// f();
+// //Re-assigning f function
+// h();
+// f();
 // console.dir(f);
 
 const boardPassengers = function (n, wait) {
@@ -247,7 +247,10 @@ const boardPassengers = function (n, wait) {
 };
 
 const perGroup = 222;
-boardPassengers(180, 3);
+// boardPassengers(180, 3);
+
+//CODING CHALLENGE #2
+
 //CODING CHALLENGE #1
 
 // Test data for bonus:
