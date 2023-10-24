@@ -249,8 +249,90 @@ const boardPassengers = function (n, wait) {
 const perGroup = 222;
 // boardPassengers(180, 3);
 
+//MORE CLOSURE EXAMPLES NEAGOIE
+const call = function () {
+  setTimeout(function () {
+    console.log(callMe);
+  }, 3000);
+  //It doesn't matter that we access callMe variable before initialization. By the time it is used in the setTimeout, it has already been declared
+  const callMe = 'Hi there';
+};
+// call();
+
+//Memory efficiency
+function heavyDuty(index) {
+  const bigArray = new Array(500).fill('👋');
+  console.log('Created');
+  return bigArray[index];
+}
+
+// heavyDuty(5);
+// heavyDuty(6);
+// heavyDuty(6);
+
+const heavyDuty2 = function () {
+  const bigArray2 = new Array(400).fill('💶');
+  console.log('Created again');
+  return function (index) {
+    return bigArray2[index];
+  };
+};
+
+// const getHeavyDuty2 = heavyDuty2();
+// getHeavyDuty2(4);
+// getHeavyDuty2(124);
+// getHeavyDuty2(124);
+// getHeavyDuty2(124);
+// console.log(element(4));
+
+//ENCAPSULATION
+
+// (function initializeView() {
+//   let view = '⛰️';
+//   console.log('View has been set');
+// })();
+
+let view;
+function initializeView() {
+  let called = 0;
+  return function () {
+    if (called > 0) {
+      console.log('Already set');
+      return;
+    } else {
+      view = '⛰️';
+      called++;
+      console.log('view has been set');
+    }
+  };
+}
+
+const array = [1, 2, 3, 4];
+
+for (let i = 0; i < array.length; i++) {
+  setTimeout(function () {
+    console.log('I am at index ' + i);
+  }, 3000);
+}
+
+// const initialize = initializeView();
+// // console.log(initialize());
+// // initialize();
+// const startOnce = initializeView();
+// startOnce();
+// startOnce();
+// console.log(view);
+// const two = initializeView();
+// two();
 //CODING CHALLENGE #2
 
+// (function () {
+//   const header = document.querySelector('h1');
+//   header.style.color = 'red';
+//   document.querySelector('body').addEventListener('click', function () {
+//     header.style.color = 'blue';
+//   });
+// })();
 //CODING CHALLENGE #1
 
 // Test data for bonus:
